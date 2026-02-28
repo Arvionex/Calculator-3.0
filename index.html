@@ -4,9 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Advanced Glassmorphic Calculator</title>
-    <link rel="stylesheet" href="/src/style.css">
+    <link rel="stylesheet" href="style.css">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- D3.js for Graphing -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
   </head>
   <body>
     <div class="bg-blobs">
@@ -221,11 +223,13 @@
       </aside>
     </main>
 
-    <script type="module" src="/src/script.ts"></script>
+    <script src="script.js" defer></script>
     <script>
-      // Initialize Lucide icons
-      lucide.createIcons();
+      // Global error handling
+      window.onerror = function(msg, url, line) {
+        console.error("Calculator Error: " + msg + " at " + line);
+        return false;
+      };
     </script>
   </body>
 </html>
-
